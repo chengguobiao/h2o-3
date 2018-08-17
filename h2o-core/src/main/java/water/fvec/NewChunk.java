@@ -510,6 +510,11 @@ public class NewChunk extends Chunk {
       addNum(d);
       return;
     }
+    if ((long) d == d) {
+      addNum((long) d, 0);
+      return;
+    }
+
     final int expIdx = Math.getExponent(d) - Double.MIN_EXPONENT;
     if (expIdx == -1) { // zero or subnormal
       if (d == 0)
